@@ -4,6 +4,6 @@ import { postVerificationController } from '../controllers/verification/verifica
 
 const router = express.Router();
 
-router.post('/v1/verification', verifyApiKey, postVerificationController);
+router.post('/v1', verifyApiKey, postVerificationController);
 
 export default router;
