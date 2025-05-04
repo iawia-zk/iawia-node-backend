@@ -1,11 +1,18 @@
 export type PostVerificationReqBody = {
   runnables: string[];
   // TODO: get this in encrypted format
-  passportData: {
-    dateOfBirth: string;
-    dateOfExpiry: string;
-    documentNumber: string;
-    issuingCountry: string;
-    nationality: string;
-  };
+  passportData: TTransactionDataEncrypted;
+};
+
+export type TTransactionDataEncrypted = {
+  dateOfBirth: TEncrypted;
+  dateOfExpiry: TEncrypted;
+  documentNumber: TEncrypted;
+  issuingCountry: TEncrypted;
+  nationality: TEncrypted;
+};
+
+export type TEncrypted = {
+  cipher: string;
+  iv: string;
 };

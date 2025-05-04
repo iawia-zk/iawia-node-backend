@@ -2,6 +2,8 @@ export function executeRunnableHash(base64Code: string, input: any): Promise<boo
   try {
     const decodedCode = Buffer.from(base64Code, 'base64').toString('utf-8');
 
+    console.log(input);
+
     const verify = eval(`(${decodedCode})`);
     const result = verify(input);
     return result;
